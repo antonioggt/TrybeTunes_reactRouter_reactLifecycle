@@ -21,19 +21,15 @@ class Header extends Component {
 
   render() {
     const { login, isLoading } = this.state;
-    /* const headerUser = (
+    const headerUser = (
       <h1 data-testid="header-user-name">
-        { login.getLogin }
+        { login.name }
       </h1>
-    ); */
+    );
     return (
       <div>
         <header data-testid="header-component">
-          { isLoading ? (<Loading />) : (
-            <h1 data-testid="header-user-name">
-              { login.getLogin }
-            </h1>
-          ) }
+          { isLoading ? (<Loading />) : (headerUser) }
         </header>
         <button type="button">
           <Link data-testid="link-to-search" to="/search">Search</Link>
@@ -48,7 +44,7 @@ class Header extends Component {
           <Link data-testid="link-to-profile" to="/profile">Profile</Link>
         </button>
         <button type="button">
-          <Link to="/profile/edit">Profile Edit</Link>
+          <Link to="/profile/edit">dit</Link>
         </button>
       </div>
     );
