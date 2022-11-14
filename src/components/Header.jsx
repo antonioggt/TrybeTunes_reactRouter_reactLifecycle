@@ -44,7 +44,7 @@ class Header extends Component {
           <Link data-testid="link-to-profile" to="/profile">Profile</Link>
         </button>
         <button type="button">
-          <Link to="/profile/edit">dit</Link>
+          <Link to="/profile/edit">Edit Profile</Link>
         </button>
       </div>
     );
