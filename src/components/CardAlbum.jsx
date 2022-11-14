@@ -37,7 +37,7 @@ CardAlbum.propTypes = {
   artistName: PropTypes.string.isRequired,
   collectionId: PropTypes.number.isRequired,
   collectionName: PropTypes.string.isRequired,
-  collectionPrice: PropTypes.string.isRequired,
+  collectionPrice: PropTypes.number.isRequired,
   artworkUrl100: PropTypes.string.isRequired,
   releaseDate: PropTypes.string.isRequired,
   trackCount: PropTypes.string.isRequired,
