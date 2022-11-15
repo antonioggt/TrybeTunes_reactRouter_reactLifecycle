@@ -14,8 +14,10 @@ class MusicCard extends Component {
     } = this.props;
     return (
       <div>
-        <h3>{ artistName }</h3>
-        <h3>{ trackName }</h3>
+        <div>
+          <h3>{ artistName }</h3>
+          <h3>{ trackName }</h3>
+        </div>
         <h3>{ collectionName }</h3>
         <img src={ previewUrl } alt={ previewUrl } />
         <audio data-testid="audio-component" src={ previewUrl } controls>

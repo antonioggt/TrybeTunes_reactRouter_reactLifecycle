@@ -49,14 +49,14 @@ class Album extends Component {
   };
 
   getMusic = async () => {
-    const { match: { params: { id } } } = this.props;
+    const { match } = this.props;
+    const { id } = match.params;
     const result = await getMusics(id);
     const musics = [...result];
     this.setState({
       artist: musics.shift(),
       arrMusic: musics,
     });
-    console.log(musics);
   };
 
   render() {
@@ -65,7 +65,7 @@ class Album extends Component {
       <div data-testid="page-album">
         <Header />
         <h5 data-testid="artist-name">{ artist.artistName }</h5>
-        <h4 data-testid="album-name">{ artist.albumName }</h4>
+        <h4 data-testid="album-name">{ artist.collectionName }</h4>
         { arrMusic.map((e) => {
           const {
             trackName,
