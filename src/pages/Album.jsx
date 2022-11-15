@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { addSong } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
 import Header from '../components/Header';
 import MusicCard from '../components/MusicCard';
 import getMusics from '../services/musicsAPI';
@@ -15,9 +15,21 @@ class Album extends Component {
     isLoading: false,
   };
 
-  componentDidMount() {
+  async componentDidMount() {
     this.getMusic();
+    this.getFavorites();
   }
+
+  getFavorites = async () => {
+    const result = await getFavoriteSongs();
+    if (result === true) {
+      result.forEach((e) => (
+        this.setState((prevState) => ({
+          isCheck: { ...prevState.isCheck, [e.trackName]: true },
+        }))
+      ));
+    }
+  };
 
   handleChanges = ({ target }) => {
     const { name, checked } = target;
