@@ -40,7 +40,7 @@ CardAlbum.propTypes = {
   collectionPrice: PropTypes.number.isRequired,
   artworkUrl100: PropTypes.string.isRequired,
   releaseDate: PropTypes.string.isRequired,
-  trackCount: PropTypes.string.isRequired,
+  trackCount: PropTypes.number.isRequired,
 };
 
 export default CardAlbum;
